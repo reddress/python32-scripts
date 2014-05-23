@@ -6,9 +6,11 @@ import os
 import shutil
 import odf2array as odsreader
 
-os.chdir("c:/Python32/Scripts/cardex/")
+# os.chdir("c:/Python32/Scripts/cardex/")
+basedir = "C:/Users/Heitor/Desktop/install Autoit/Scripts/cardex/"
+os.chdir(basedir)
 
-workdir = raw_input(r"Enter directory name under c:\Python32\Scripts\cardex: ")
+workdir = raw_input(r"Enter directory name under " + basedir)
 
 try:
     os.chdir(workdir)
@@ -36,7 +38,7 @@ try:
         print("Sr. Yeh .txt not found.")
     
     # read verificar
-    veriflines = verificar.readlines()
+    veriflines = map(str.strip, verificar.readlines())
     veriflines = list(set(veriflines))
     veriflines.sort()
     
